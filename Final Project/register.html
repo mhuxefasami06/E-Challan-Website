@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - E-Challan Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <style>
+        :root {
+            --portal-navy: #002B7F;
+            --bg-light: #f0f2f5;
+            --input-bg: #e8f0fe;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .register-container {
+            flex-grow: 1; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 15px;
+        }
+
+        .register-card {
+            background: white;
+            border: none;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            width: 100%;
+            max-width: 650px; /* Wider than login for two-column layout */
+        }
+
+        .register-card h2 {
+            color: var(--portal-navy);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+.btn-login-custom {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: white !important;
+    padding: 6px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 0.9rem;
+}
+
+.btn-login-custom:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: white;
+}
+
+/* Ensure the nav links don't crowd on smaller screens */
+.nav-link {
+    font-size: 0.95rem;
+    margin: 0 5px;
+}
+        .form-label {
+            font-weight: 600;
+            color: #444;
+            font-size: 0.9rem;
+        }
+
+        .form-control {
+            padding: 10px 12px;
+            border-radius: 8px;
+            border: 1px solid #d1d9e6;
+            font-size: 0.95rem;
+        }
+
+        /* Blue tint for specific fields to match your theme */
+        .form-control:focus {
+            background-color: var(--input-bg);
+            border-color: var(--portal-navy);
+            box-shadow: none;
+        }
+
+        .btn-register {
+            background-color: var(--portal-navy);
+            color: white;
+            font-weight: 600;
+            padding: 12px;
+            width: 100%;
+            border-radius: 8px;
+            border: none;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .btn-register:hover {
+            background-color: #001f5c;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background-color: var(--portal-navy);
+            color: rgba(255,255,255,0.8);
+            padding: 30px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: var(--portal-navy); border-bottom: 1px solid rgba(255,255,255,0.1);">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center fw-bold" href="index.html">
+            <i class="bi bi-shield-check me-2 fs-3"></i>
+            <div>
+                <span class="d-block lh-1" style="font-size: 1.2rem;">E-CHALLAN</span>
+                <span class="d-block small opacity-75" style="font-size: 0.7rem; letter-spacing: 1px;">PUNJAB POLICE</span>
+            </div>
+        </a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-center">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="verify.html">Verify Challan</a></li>
+                <li class="nav-item"><a class="nav-link" href="rules.html">Traffic Rules</a></li>
+                <li class="nav-item"><a class="nav-link" href="support.html">Support</a></li>
+                <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                    <a href="login.html" class="btn-login-custom me-2">Login</a>
+                    <a href="register.html" class="btn btn-light px-4 fw-bold text-primary btn-sm">Register</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+    <div class="register-container">
+        <div class="register-card">
+            <h2>Create New Account</h2>
+            
+            <form action="login.html">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-control" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">CNIC Number</label>
+                        <input type="text" class="form-control" placeholder="12345-1234567-1" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" class="form-control" placeholder="your@email.com" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" placeholder="+92-XXX-XXXXXXX" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-control" placeholder="Create a password" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" placeholder="Confirm your password" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-register">
+                    <i class="bi bi-pencil-square me-2"></i> Create Account
+                </button>
+            </form>
+
+            <div class="text-center mt-4">
+                <span class="text-muted">Already have an account?</span> 
+                <a href="login.html" class="fw-bold text-decoration-none" style="color: var(--portal-navy);">Login here</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p class="mb-0 small">© 2026 E-Challan Traffic Management System. Secure Government Portal.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

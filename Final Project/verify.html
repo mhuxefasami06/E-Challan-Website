@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Your E-Challan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <a href="verify.html"></a>
+    <style>
+        :root {
+            --portal-navy: #002B7F;
+            --portal-blue: #003399;
+            --bg-light: #f0f2f5;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .page-header {
+            background-color: var(--portal-navy);
+            color: white;
+            padding-bottom: 100px;
+        }
+
+        .navbar-brand img {
+            width: 32px;
+            background: white;
+            border-radius: 4px;
+            padding: 2px;
+        }
+
+        .verify-card {
+            background: white;
+            border: none;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 500px;
+            margin: -60px auto 60px;
+        }
+
+        .verify-card h2 {
+            color: var(--portal-navy);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-control {
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            background-color: #fafafa;
+        }
+
+        .btn-search {
+            background-color: var(--portal-navy);
+            color: white;
+            font-weight: 600;
+            padding: 12px;
+            width: 100%;
+            border-radius: 8px;
+            margin-top: 20px;
+            border: none;
+            transition: 0.3s;
+        }
+
+        .btn-login-outline {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            color: white;
+            transition: 0.3s;
+        }
+
+        .btn-search:hover {
+            background-color: #001f5c;
+            color: white;
+        }
+
+
+        footer {
+            background-color: var(--portal-navy);
+            color: rgba(255,255,255,0.8);
+            padding: 40px 0 20px;
+            margin-top: auto;
+        }
+
+        footer h5 { color: white; margin-bottom: 20px; }
+        footer a { color: rgba(255,255,255,0.7); text-decoration: none; display: block; margin-bottom: 8px; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; margin-top: 30px; }
+
+        /* Mobile Menu Hack */
+        #nav-check { display: none; }
+        @media (max-width: 991px) {
+            .navbar-collapse { display: none; }
+            #nav-check:checked ~ .navbar-collapse { display: block; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-header">
+        <nav class="navbar navbar-expand-lg navbar-dark pt-3">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center fw-bold" href="index.html">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2966/2966327.png" alt="Logo" class="me-2"> 
+                    E-Challan Portal
+                </a>
+                
+                <label for="nav-check" class="navbar-toggler border-0"><span class="navbar-toggler-icon"></span></label>
+                <input type="checkbox" id="nav-check">
+
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav ms-auto align-items-center">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="verify.html">Verify Challan</a></li>
+                        <li class="nav-item"><a class="nav-link" href="rules.html">Traffic Rules</a></li>
+                        <li class="nav-item"><a class="nav-link" href="support.html">Support</a></li>
+                        <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                            <a href="login.html"><button class="btn btn-login-outline px-4 me-2">Login</button></a>
+                            <button class="btn btn-light px-4 fw-bold text-primary">Register</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <main class="container">
+        <div class="verify-card">
+            <h2>Verify Your E-Challan</h2>
+            
+            <form action="#" method="GET">
+                <div class="mb-4">
+                    <label class="form-label">CNIC / Vehicle Number</label>
+                    <input type="text" class="form-control" placeholder="12345-1234567-1 or ABC-123" required>
+                </div>
+                
+                <div class="mb-4">
+                    <label class="form-label">Challan ID</label>
+                    <input type="text" class="form-control" placeholder="CH-2024-00001" required>
+                </div>
+                
+                <button type="submit" class="btn btn-search">
+                    <i class="bi bi-search me-2"></i> Search Record
+                </button>
+            </form>
+        </div>
+    </main>
+
+   <footer>
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-3 col-md-6">
+                    <h5>About E-Challan</h5>
+                    <p class="small">Official government portal for traffic violation management and fine payments.</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Quick Links</h5>
+                    <a href="index.html" class="small">Home</a>
+                    <a href="verify.html" class="small">Verify Challan</a>
+                    <a href="rules.html" class="small">Traffic Rules</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Contact</h5>
+                    <p class="small mb-1">support@echallan.gov.pk</p>
+                    <p class="small">+92-51-111-4444</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Office Hours</h5>
+                    <p class="small mb-1">Monday - Friday</p>
+                    <p class="small">9:00 AM - 5:00 PM</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom d-flex justify-content-between align-items-center">
+                <p class="mb-0">© 2026 E-Challan Traffic Management System. All rights reserved.</p>
+                <a href="#" class="small">Admin Login →</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

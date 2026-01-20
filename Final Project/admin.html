@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - E-Challan Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <style>
+        :root {
+            --portal-navy: #002B7F;
+            --bg-light: #f8f9fa;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /* Admin Sidebar Effect */
+        .admin-header {
+            background-color: var(--portal-navy);
+            color: white;
+            padding: 15px 0;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: white;
+            border: none;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-left: 5px solid var(--portal-navy);
+        }
+
+        .stat-icon {
+            font-size: 2rem;
+            opacity: 0.3;
+            float: right;
+        }
+
+        .table-container {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            margin-top: 30px;
+        }
+
+        .status-paid { color: #28a745; font-weight: bold; }
+        .status-pending { color: #dc3545; font-weight: bold; }
+
+        .btn-logout {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+        }
+         footer {
+            background-color: var(--portal-navy);
+            color: rgba(255,255,255,0.8);
+            padding: 40px 0 20px;
+            margin-top: auto;
+        }
+
+        footer h5 { color: white; margin-bottom: 20px; }
+        footer a { color: rgba(255,255,255,0.7); text-decoration: none; display: block; margin-bottom: 8px; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; margin-top: 30px; }
+
+        /* Mobile Menu Hack */
+        #nav-check { display: none; }
+        @media (max-width: 991px) {
+            .navbar-collapse { display: none; }
+            #nav-check:checked ~ .navbar-collapse { display: block; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="admin-header">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h4 class="mb-0 fw-bold"><i class="bi bi-shield-lock me-2"></i>Admin Management</h4>
+            <div class="d-flex align-items-center">
+                <span class="me-3 d-none d-md-inline">Welcome, <strong>System Admin</strong></span>
+                <a href="login.html" class="btn btn-sm btn-logout">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="stat-card">
+                    <i class="bi bi-file-earmark-text stat-icon text-primary"></i>
+                    <h6 class="text-muted">Total Challans</h6>
+                    <h3>1,284</h3>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-card">
+                    <i class="bi bi-cash-stack stat-icon text-success"></i>
+                    <h6 class="text-muted">Revenue Collected</h6>
+                    <h3>PKR 2.4M</h3>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-card">
+                    <i class="bi bi-exclamation-triangle stat-icon text-danger"></i>
+                    <h6 class="text-muted">Unpaid Fines</h6>
+                    <h3>342</h3>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="stat-card">
+                    <i class="bi bi-people stat-icon text-info"></i>
+                    <h6 class="text-muted">Active Officers</h6>
+                    <h3>45</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h5 class="fw-bold text-navy">Recent Violations</h5>
+                <button class="btn btn-primary btn-sm"><i class="bi bi-plus-lg me-1"></i> Issue New Challan</button>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Challan ID</th>
+                            <th>Vehicle No.</th>
+                            <th>Violation</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#CH-2024-001</td>
+                            <td>ABC-123</td>
+                            <td>Speeding</td>
+                            <td>PKR 2,500</td>
+                            <td><span class="status-paid">Paid</span></td>
+                            <td><button class="btn btn-outline-secondary btn-sm">View</button></td>
+                        </tr>
+                        <tr>
+                            <td>#CH-2024-002</td>
+                            <td>LEZ-994</td>
+                            <td>Red Light</td>
+                            <td>PKR 3,000</td>
+                            <td><span class="status-pending">Pending</span></td>
+                            <td><button class="btn btn-outline-secondary btn-sm">View</button></td>
+                        </tr>
+                        <tr>
+                            <td>#CH-2024-003</td>
+                            <td>KHI-772</td>
+                            <td>No Helmet</td>
+                            <td>PKR 1,000</td>
+                            <td><span class="status-paid">Paid</span></td>
+                            <td><button class="btn btn-outline-secondary btn-sm">View</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+<footer>
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-3 col-md-6">
+                    <h5>About E-Challan</h5>
+                    <p class="small">Official government portal for traffic violation management and fine payments.</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Quick Links</h5>
+                    <a href="#" class="small">Home</a>
+                    <a href="#" class="small">Verify Challan</a>
+                    <a href="#" class="small">Traffic Rules</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Contact</h5>
+                    <p class="small mb-1">support@echallan.gov.pk</p>
+                    <p class="small">+92-51-111-4444</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Office Hours</h5>
+                    <p class="small mb-1">Monday - Friday</p>
+                    <p class="small">9:00 AM - 5:00 PM</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom d-flex justify-content-between align-items-center">
+                <p class="mb-0">© 2026 E-Challan Traffic Management System. All rights reserved.</p>
+                <a href="#" class="small">Admin Login →</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
